@@ -77,11 +77,10 @@
 		34B156D51CA8CB9E0070FBF8 /* ud-ios */ = {
 			isa = PBXGroup;
 			children = (
+				34B156F71CA8D0EF0070FBF8 /* controllers */,
+				34B156F61CA8D0DC0070FBF8 /* views */,
 				34B156D61CA8CB9E0070FBF8 /* AppDelegate.swift */,
-				34B156D81CA8CB9E0070FBF8 /* ViewController.swift */,
-				34B156DA1CA8CB9E0070FBF8 /* Main.storyboard */,
 				34B156DD1CA8CB9E0070FBF8 /* Assets.xcassets */,
-				34B156DF1CA8CB9E0070FBF8 /* LaunchScreen.storyboard */,
 				34B156E21CA8CB9E0070FBF8 /* Info.plist */,
 			);
 			path = "ud-ios";
@@ -94,6 +93,23 @@
 				34B156ED1CA8CB9E0070FBF8 /* Info.plist */,
 			);
 			path = "ud-iosTests";
+			sourceTree = "<group>";
+		};
+		34B156F61CA8D0DC0070FBF8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				34B156DA1CA8CB9E0070FBF8 /* Main.storyboard */,
+				34B156DF1CA8CB9E0070FBF8 /* LaunchScreen.storyboard */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		34B156F71CA8D0EF0070FBF8 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				34B156D81CA8CB9E0070FBF8 /* ViewController.swift */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

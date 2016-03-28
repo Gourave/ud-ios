@@ -44,20 +44,21 @@
                                     <constraint firstItem="mjH-ES-6AU" firstAttribute="top" secondItem="Z1t-0N-k4j" secondAttribute="top" constant="8" id="pAi-mN-jmK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="335" placeholderIntrinsicHeight="352" translatesAutoresizingMaskIntoConstraints="NO" id="Yfm-C3-9fh">
-                                <rect key="frame" x="8" y="74" width="359" height="352"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klL-pg-46T">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z1t-0N-k4j" secondAttribute="bottom" constant="592" id="5bX-ww-8x3"/>
-                            <constraint firstAttribute="trailing" secondItem="Yfm-C3-9fh" secondAttribute="trailing" constant="8" id="9R1-mE-AHx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="klL-pg-46T" secondAttribute="bottom" id="C9h-ix-B6F"/>
                             <constraint firstItem="Z1t-0N-k4j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HJd-3C-Qxv"/>
-                            <constraint firstItem="Yfm-C3-9fh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="IKW-uh-VAt"/>
                             <constraint firstItem="Z1t-0N-k4j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ihy-2W-ETc"/>
-                            <constraint firstItem="Yfm-C3-9fh" firstAttribute="top" secondItem="Z1t-0N-k4j" secondAttribute="bottom" constant="8" id="RaX-o5-iln"/>
                             <constraint firstAttribute="trailing" secondItem="Z1t-0N-k4j" secondAttribute="trailing" id="SvI-eE-yqB"/>
+                            <constraint firstItem="klL-pg-46T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jul-Ka-E4g"/>
+                            <constraint firstItem="klL-pg-46T" firstAttribute="top" secondItem="Z1t-0N-k4j" secondAttribute="bottom" id="mcJ-9E-idR"/>
+                            <constraint firstAttribute="trailing" secondItem="klL-pg-46T" secondAttribute="trailing" id="yl2-UQ-Lmm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
