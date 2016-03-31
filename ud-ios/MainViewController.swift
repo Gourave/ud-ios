@@ -29,6 +29,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // NOTE: http://api.urbandictionary.com/v0/define?term=kvlt <-- example of api call
         // To get a random definition: http://api.urbandictionary.com/v0/random
+        
+        Service.getRandomWord()
     }
 
     override func didReceiveMemoryWarning() {
