@@ -10,7 +10,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: Properties
     
-    let definitions = [Definition]()
+    var definitions = [Definition]()
     let definitionCellId = "DefinitionCell"
     let definitionCellHeight: CGFloat = 256
     
@@ -23,14 +23,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        
         let definitionNib = UINib(nibName: definitionCellId, bundle: nil)
         tableView.registerNib(definitionNib, forCellReuseIdentifier: definitionCellId)
         
-        // NOTE: http://api.urbandictionary.com/v0/define?term=kvlt <-- example of api call
-        // To get a random definition: http://api.urbandictionary.com/v0/random
-        
-        Service.getRandomWord()
+        Service.getRandomWord({
+            (result) -> () in
+            
+            guard result.count > 0 else {
+                return
+            }
+            
+            self.definitions = result
+            
+            self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
