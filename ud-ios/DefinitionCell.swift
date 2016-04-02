@@ -1,6 +1,15 @@
 import UIKit
 
+protocol MainViewControllerDelegate {
+    func searchFor(word: String)
+}
+
 class DefinitionCell: UITableViewCell {
+    
+    
+    // MARK: Properties
+    
+    internal var delegate: MainViewControllerDelegate?
     
     
     // MARK: Outlets
@@ -21,5 +30,11 @@ class DefinitionCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func searchForMultipleDefinitions(sender: AnyObject) {
+        delegate?.searchFor(word.text!)
+    }
+    
+    
 
 }

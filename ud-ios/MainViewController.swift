@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MainViewControllerDelegate {
     
     
     // MARK: Outlets
@@ -51,7 +51,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let word = searchField.text else {
             return
         }
-        
+
+        searchFor(word)
+    }
+    
+    
+    // MARK: Internal methods
+    
+    internal func searchFor(word: String) {
         Service.getDefinition(word, completion: {
             (result) -> () in
             
@@ -63,11 +70,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.searchField.text = ""
             self.tableView.reloadData()
         })
-        
     }
     
-    
-    // MARK: TableView functions
+    // MARK: TableView methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -96,6 +101,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Populate view outlets
         definitionCell!.word.text = definition.word!
         definitionCell!.definition.text = definition.definition!
+        definitionCell!.delegate = self
         
         return definitionCell!
     }
