@@ -6,6 +6,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchField: UITextField!
     
     
     // MARK: Properties
@@ -34,7 +35,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             self.definitions = result
-            
             self.tableView.reloadData()
         })
     }
@@ -42,6 +42,28 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: Actions
+    
+    @IBAction func search(sender: AnyObject) {
+        guard let word = searchField.text else {
+            return
+        }
+        
+        Service.getDefinition(word, completion: {
+            (result) -> () in
+            
+            guard result.count > 0 else {
+                return
+            }
+            
+            self.definitions = result
+            self.searchField.text = ""
+            self.tableView.reloadData()
+        })
+        
     }
     
     

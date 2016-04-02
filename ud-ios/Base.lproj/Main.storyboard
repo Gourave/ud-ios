@@ -23,7 +23,10 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="295" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type any word here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-ES-6AU" userLabel="Search Box">
                                         <rect key="frame" x="8" y="8" width="295" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="search:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="WBG-Oc-zZZ"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" placeholderIntrinsicWidth="56" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqN-mO-I5n">
                                         <rect key="frame" x="311" y="8" width="56" height="30"/>
@@ -31,6 +34,9 @@
                                         <state key="normal" title="Search">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13C-cL-0ui"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.14117647058823529" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,8 +51,8 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="klL-pg-46T">
-                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -58,7 +64,7 @@
                             <constraint firstItem="Z1t-0N-k4j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ihy-2W-ETc"/>
                             <constraint firstAttribute="trailing" secondItem="Z1t-0N-k4j" secondAttribute="trailing" id="SvI-eE-yqB"/>
                             <constraint firstItem="klL-pg-46T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jul-Ka-E4g"/>
-                            <constraint firstItem="klL-pg-46T" firstAttribute="top" secondItem="Z1t-0N-k4j" secondAttribute="bottom" id="mcJ-9E-idR"/>
+                            <constraint firstItem="klL-pg-46T" firstAttribute="top" secondItem="Z1t-0N-k4j" secondAttribute="bottom" constant="15" id="mcJ-9E-idR"/>
                             <constraint firstAttribute="trailing" secondItem="klL-pg-46T" secondAttribute="trailing" id="yl2-UQ-Lmm"/>
                         </constraints>
                         <variation key="default">
@@ -69,6 +75,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="searchField" destination="mjH-ES-6AU" id="Sne-qs-zK1"/>
                         <outlet property="tableView" destination="klL-pg-46T" id="isH-eH-8Xb"/>
                     </connections>
                 </viewController>
