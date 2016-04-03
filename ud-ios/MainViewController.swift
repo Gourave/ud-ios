@@ -103,7 +103,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Populate view outlets
         definitionCell!.word.text = definition.word!
         definitionCell!.definition.text = definition.definition!
-        definitionCell!.authorName.text = definition.author!
+        definitionCell!.authorName.text = "By \(definition.author!)"
         definitionCell!.thumbsUp.text = "\(definition.thumbsUp!)"
         definitionCell!.thumbsDown.text = "\(definition.thumbsDown!)"
         
