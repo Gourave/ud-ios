@@ -86,6 +86,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return definitions.count
     }
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = tableView.backgroundColor
+        return view
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Dequeue the reusable cell as a definitionCell
         let definitionCell = tableView.dequeueReusableCellWithIdentifier(definitionCellId) as? DefinitionCell
