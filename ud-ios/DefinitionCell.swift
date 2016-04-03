@@ -16,6 +16,9 @@ class DefinitionCell: UITableViewCell {
     
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var definition: UILabel!
+    @IBOutlet weak var authorName: UILabel!
+    @IBOutlet weak var thumbsUp: UILabel!
+    @IBOutlet weak var thumbsDown: UILabel!
     
     
     // MARK: Lifecycle methods

@@ -24,6 +24,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.estimatedRowHeight = definitionCellHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         let definitionNib = UINib(nibName: definitionCellId, bundle: nil)
         tableView.registerNib(definitionNib, forCellReuseIdentifier: definitionCellId)
         
@@ -82,10 +85,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return definitions.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return definitionCellHeight
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Dequeue the reusable cell as a definitionCell
         let definitionCell = tableView.dequeueReusableCellWithIdentifier(definitionCellId) as? DefinitionCell
@@ -98,10 +97,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let row = indexPath.row
         let definition = definitions[row]
         
+        // Set cells delegate
+        definitionCell!.delegate = self
+        
         // Populate view outlets
         definitionCell!.word.text = definition.word!
         definitionCell!.definition.text = definition.definition!
-        definitionCell!.delegate = self
+        definitionCell!.authorName.text = definition.author!
+        definitionCell!.thumbsUp.text = "\(definition.thumbsUp!)"
+        definitionCell!.thumbsDown.text = "\(definition.thumbsDown!)"
         
         return definitionCell!
     }
